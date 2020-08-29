@@ -34,5 +34,11 @@ def create_feature_columns(dataframe,lable_column_name):
 
         ## Wrap the categorical column with Indicator_column in case of having alimitted vocabulary list
         feature_columns.append(tf.feature_column.indicator_column(cat_feature_column_with_vocab))
-    
+
+    # Cross feature of 'age' and 'sex'
+    sex = tf.feature_column.categorical_column_with_vocabulary_list('sex',['male','female'])
+    age_sex_cross_feature = tf.feature_column.crossed_column([age_bucketized,sex],hash_bucket_size=3)
+    age_sex_cross_feature_column = tf.feature_column.indicator_column(age_sex_cross_feature)
+
+
     return feature_columns
