@@ -3,12 +3,12 @@ import matplotlib.pyplot as plt
 
 import read_dataset as rd
 
-def dataframe_overview():
+def dataframe_overview(lable_column_name,test_size_percent=0.3,shuffle=False):
     '''
     Give an onverview on the dataset
     '''
 
-    df_train,df_test,lable_column_name = rd.read_dataset_as_dataFrame()
+    df_train,df_test = rd.read_dataset_as_dataFrame(lable_column_name=lable_column_name,test_size_percent=test_size_percent,shuffle=shuffle)
 
     # dataFrame functionalities on raw data
     print('Data overview on well-known "Titanic" dataset->')

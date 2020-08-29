@@ -11,7 +11,7 @@ def main():
     lable_column_name = 'survived'
 
     # display some charectristic of data as dataFrame object
-    df_overview.dataframe_overview()
+    df_overview.dataframe_overview(lable_column_name)
 
     # demonstrate the raw input data vs data after transforming to the feature_column as DenseFeatured
     demo_with_feature_column(lable_column_name)
